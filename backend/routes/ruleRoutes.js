@@ -1,5 +1,5 @@
 const express = require('express');
-const { createRule, combineRules, evaluateRule } = require('../services/ruleService');
+const { createRule, combineRules, evaluateRule } = require('../services/RuleService');
 const Rule = require('../schemas/Rule');
 const rulesController = require("../controller/rules.js");
 const wrapAsync = require('../utils/wrapAsync');  // Import wrapAsync utility

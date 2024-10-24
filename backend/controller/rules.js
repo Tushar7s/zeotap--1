@@ -1,5 +1,5 @@
 const Rule = require('../schemas/Rule');
-const { createRule, combineRules, evaluateRule } = require('../services/ruleService');
+const { createRule, combineRules, evaluateRule } = require('../services/RuleService');
 
 module.exports.createRules = async(req, res) => {
   const { name, ruleString } = req.body;
