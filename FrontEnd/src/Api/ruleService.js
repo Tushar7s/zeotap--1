@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://ruleengine-1cn9.onrender.com/api';
 
 // Fetch all rules
 export const getRules = async () => {
