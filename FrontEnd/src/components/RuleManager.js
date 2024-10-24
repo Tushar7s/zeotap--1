@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { getRules, deleteRule } from '../Api/ruleService';
-import RuleForm from './AddRuleForm';
+import AddRuleForm from './AddRuleForm';  // Make sure the import matches the component name
 import ErrorHandler from './ErrorHandler';
 import Shimmer from './Shimmer'; // Import the Shimmer component
+import '../styles/rulemanager.css';
 
 const RuleManager = () => {
     const [rules, setRules] = useState([]);
     const [selectedRule, setSelectedRule] = useState(null);
     const [reload, setReload] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
-    const [loading, setLoading] = useState(false); // Add loading state
+    const [loading, setLoading] = useState(false);
     const errorHandlerRef = useRef();
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const RuleManager = () => {
 
     const handleEdit = (rule) => {
         setSelectedRule(rule);
-        setIsEditing(true);  // Open popover for editing
+        setIsEditing(true);
     };
 
     const handleDelete = async (id) => {
@@ -49,7 +50,6 @@ const RuleManager = () => {
 
     const handleRuleUpdated = () => {
         setReload((prev) => !prev);  // Refresh the rules list after updating
-        closePopover();  // Close the popover after rule update
     };
 
     const closePopover = () => {
@@ -64,9 +64,10 @@ const RuleManager = () => {
             {loading && <Shimmer />} {/* Shimmer effect while loading */}
             {isEditing && selectedRule && (
                 <div className="popover">
-                    <RuleForm
+                    <AddRuleForm
                         existingRule={selectedRule}
                         closePopover={closePopover}  // Pass the close popover handler
+                        onRuleUpdated={handleRuleUpdated}  // Pass the onRuleUpdated handler
                     />
                 </div>
             )}

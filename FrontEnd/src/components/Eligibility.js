@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { checkEligibility } from '../Api/ruleService';
 import ErrorHandler from './ErrorHandler';
 import Shimmer from './Shimmer'; // Import the Shimmer component
-
+import '../styles/eligibility.css'
 const Eligibility = () => {
     const [data, setData] = useState({
         age: '',

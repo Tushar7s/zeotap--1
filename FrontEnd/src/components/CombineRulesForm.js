@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ErrorHandler from './ErrorHandler'; // Ensure this component exists
 import { combineRules } from '../Api/ruleService'; // Adjust based on your structure
-
+import '../styles/combinerule.css'
 const CombineRulesForm = () => {
     const [rules, setRules] = useState([{ ruleString: '' }]);
     const [operator, setOperator] = useState('AND');

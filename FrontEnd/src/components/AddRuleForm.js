@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { saveOrUpdateRule } from '../Api/ruleService';
 import ErrorHandler from './ErrorHandler'; // Import ErrorHandler
 import validateRule from './RuleValidation';
+import RuleManager from './RuleManager';
+import '../styles/newRule.css';
 
-const AddRuleForm = ({ existingRule = null, closePopover }) => {
+const AddRuleForm = ({ existingRule = null, closePopover, onRuleUpdated }) => {
     const [ruleName, setRuleName] = useState(existingRule ? existingRule.name : '');
     const [ruleString, setRuleString] = useState(existingRule ? existingRule.ruleString : '');
     const errorHandlerRef = React.useRef();
@@ -31,8 +33,12 @@ const AddRuleForm = ({ existingRule = null, closePopover }) => {
             await saveOrUpdateRule(existingRule?._id, ruleName, ruleString);
             
             errorHandlerRef.current.showSuccess('Rule saved successfully!');
-            
+
             // After successful update, call onRuleUpdated and closePopover
+            if(existingRule){
+            onRuleUpdated();  // Call the onRuleUpdated function
+            closePopover(); 
+            }  // Close the popover
         } catch (err) {
             console.log(err);
             errorHandlerRef.current.showError(err.message || 'Error saving the rule. Please try again.');
@@ -43,7 +49,7 @@ const AddRuleForm = ({ existingRule = null, closePopover }) => {
         <div className="rule-form-container">
             <ErrorHandler ref={errorHandlerRef} />
             <h2>{existingRule ? 'Edit Rule' : 'Add New Rule'}</h2>
-            <button className="close-button" onClick={closePopover}>×</button> {/* Add close button here */}
+            <button className="close-button" onClick={closePopover}>×</button>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="ruleName">Rule Name:</label>
