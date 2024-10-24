@@ -51,3 +51,11 @@ npm install
 ### Run Application
 npm start
 
+### .ENV Example
+
+CLOUD_NAME="your cloud name"
+CLOUD_API_KEY="your api key"
+CLOUD_API_SECRET="your clodesecret key"
+ATLASDB_URL="your atlasDB url"
+
+SECRET="your secret key"
