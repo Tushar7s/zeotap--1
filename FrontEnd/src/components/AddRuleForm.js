@@ -3,7 +3,7 @@ import { saveOrUpdateRule } from '../Api/ruleService';
 import ErrorHandler from './ErrorHandler'; // Import ErrorHandler
 import validateRule from './RuleValidation';
 import RuleManager from './RuleManager';
-import '../styles/newRule.css';
+import '../styles/newrule.css';
 
 const AddRuleForm = ({ existingRule = null, closePopover, onRuleUpdated }) => {
     const [ruleName, setRuleName] = useState(existingRule ? existingRule.name : '');
