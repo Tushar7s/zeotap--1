@@ -1,0 +1,124 @@
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-bottom: 2px solid #f0f0f0; /* Thin border at the bottom */
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    font-family: 'Serif', sans-serif;
+    font-size: 1.5em;
+    color: #007bff; /* Bright blue for the logo */
+}
+
+/* Nav-links styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff; /* Bright blue text */
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Auth buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .signup-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.login-btn {
+    color: #007bff;
+    border: 1px solid #007bff;
+    background-color: transparent;
+}
+
+.login-btn:hover {
+    color: white;
+    background-color: #007bff;
+}
+
+.signup-btn {
+    color: white;
+    background-color: #007bff;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sidebar for smaller screens */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #007bff; /* Blue sidebar */
+    padding: 15px;
+    transition: 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 0;
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #0056b3;
+    padding-left: 10px;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    font-size: 1.8em;
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links, .auth-buttons {
+        display: none; /* Hide links and buttons on small screens */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu */
+    }
+
+    .sidebar.open {
+        left: 0; /* Open the sidebar when triggered */
+    }
+}

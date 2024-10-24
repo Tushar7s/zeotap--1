@@ -1,0 +1,98 @@
+/* src/styles/EligibilityCheck.css */
+body{
+    background-color: #007bff;
+}
+.eligibility-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    max-width: 500px; /* Reduced max-width for a more compact look */
+    margin: 50px auto; /* Added top margin for spacing */
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* White background for clarity */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Smooth scaling on hover */
+  }
+  
+  .eligibility-container:hover {
+    transform: scale(1.02); /* Slight scale effect on hover */
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 32px; /* Increased font size */
+    color: #343a40;
+    text-align: center; /* Centered title */
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s; /* Transition for focus effects */
+  
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Box shadow on focus */
+    }
+  }
+  
+  button {
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size for better readability */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+  
+    &:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px); /* Button lift on hover */
+    }
+  
+    &:active {
+      transform: translateY(0); /* Button reset on click */
+    }
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 16px; /* Font size for error message */
+    text-align: center; /* Centered error message */
+  }
+  
+  .success {
+    color: green;
+    margin-top: 10px;
+    font-size: 18px; /* Font size for success message */
+    text-align: center; /* Centered success message */
+  }
+  
+  @media (max-width: 768px) {
+    .eligibility-container {
+      padding: 20px; /* Adjust padding on smaller screens */
+    }
+  
+    h1 {
+      font-size: 28px; /* Reduced font size for smaller screens */
+    }
+  
+    input {
+      font-size: 14px; /* Reduced font size for inputs */
+    }
+  
+    button {
+      font-size: 16px; /* Reduced font size for button */
+    }
+  }
+  

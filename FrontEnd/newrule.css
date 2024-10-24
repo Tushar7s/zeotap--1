@@ -1,0 +1,94 @@
+/* src/components/AddRuleForm.css */
+
+.add-rule-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.add-rule-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space below each form group */
+}
+
+.form-group label {
+    display: block; /* Block display for label */
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold for emphasis */
+    color: #555; /* Darker gray for label text */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.add-rule-container button {
+    width: 100%; /* Full width button */
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.add-rule-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.add-rule-container .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.add-rule-container .success {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .add-rule-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #f44336; /* Red hover color */
+}

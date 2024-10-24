@@ -1,0 +1,83 @@
+.popover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px; /* Increase padding for comfort */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 80vw; /* 80% of the viewport width */
+    max-width: 900px; /* Maximum width for larger screens */
+    height: 70vh; /* 70% of the viewport height */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px; /* Larger font size for visibility */
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button:hover {
+    color: #f44336; /* Red hover color */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%; /* Make input fields span the full width */
+    padding: 12px; /* Increase padding for comfort */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%; /* Full width for the text area */
+    height: 150px; /* Larger height for better visibility */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .popover {
+        width: 95vw; /* Full width for smaller screens */
+        height: 85vh; /* Adjust height for small devices */
+    }
+}
